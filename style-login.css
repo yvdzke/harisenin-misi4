@@ -186,3 +186,21 @@ body {
   animation: fadeSlideUp 0.6s ease-out forwards;
   animation-delay: 0.2s; /* jeda sedikit biar smooth */
 }
+
+.register-link {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+}
+
+.register-link a {
+  color: #4f46e5; /* ungu modern */
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.register-link a:hover {
+  color: #312e81; /* ungu lebih gelap saat hover */
+}
