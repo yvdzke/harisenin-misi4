@@ -286,6 +286,11 @@ const renderTasks = () => {
       checkbox.addEventListener("change", () => {
         const index = tasks.findIndex((t) => t.id === task.id);
         tasks[index].completed = !tasks[index].completed;
+        if (tasks[index].completed) {
+          label.classList.add("completed");
+        } else {
+          label.classList.remove("completed");
+        }
         saveLocal();
       });
       div.innerHTML = `
@@ -324,6 +329,10 @@ const renderTasks = () => {
     }
   </div>
 `;
+      if (task.completed) {
+        label.classList.add("completed");
+      }
+
       label.prepend(checkbox);
       div.prepend(label);
       tasksContainer.appendChild(div);

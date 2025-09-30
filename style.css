@@ -456,3 +456,8 @@ button.add-btn {
   margin-left: 2rem;
   margin-top: -5px;
 }
+
+.task.completed p {
+  text-decoration: line-through;
+  color: #888; /* opsional biar abu-abu */
+}
