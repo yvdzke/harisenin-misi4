@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Inter Tight", sans-serif;
+  background-color: aliceblue;
+  color: #333;
+}
+
+.wrapper {
+  position: relative;
+  height: 100vh;
+  width: 100vh;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    height: 50rem;
+    width: 25rem;
+    border-radius: 40px;
+    border: 10px solid #2e2e2e;
+  }
+}
+
+.screen-backdrop {
+  width: 135%;
+  height: 25rem;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 0 0 50% 50%;
+  background-color: #3977a5; /* beda warna dari login */
+  z-index: -1;
+}
+
+.screen.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+/* Form Register */
+.register-form {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  width: 85%;
+  max-width: 350px;
+  text-align: center;
+  opacity: 0;
+  animation: fadeSlideUp 0.6s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+.register-form h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.register-form input,
+.register-form select {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.register-form input:focus,
+.register-form select:focus {
+  border-color: #3977a5;
+  box-shadow: 0 0 0 3px rgba(57, 119, 165, 0.2);
+}
+
+/* Button */
+.register-form button {
+  width: 100%;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  background: #3977a5;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.register-form button:hover {
+  background: #2e5d85;
+  transform: translateY(-2px);
+}
+
+.register-form button:active {
+  transform: translateY(0);
+}
+
+/* Link login */
+.register-form .login-link {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.register-form .login-link a {
+  color: #3977a5;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.register-form .login-link a:hover {
+  text-decoration: underline;
+}
+
+/* Animasi muncul */
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

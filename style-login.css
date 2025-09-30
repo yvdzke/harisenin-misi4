@@ -1,0 +1,188 @@
+@import url(https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  color: darkslategrey;
+  background-color: aliceblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper {
+  position: relative;
+  height: 100vh;
+  width: 100vh;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    height: 50rem;
+    width: 25rem;
+    border-radius: 40px;
+    border: 10px solid #2e2e2e;
+  }
+}
+
+.screen-backdrop {
+  width: 135%;
+  height: 25rem;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #a53939;
+  border-radius: 0 0 50% 50%;
+}
+
+.login-form {
+  width: 2rem;
+  cursor: pointer;
+  color: #0a0909;
+}
+
+.screen.home {
+  display: flex;
+  align-items: center; /* center secara vertical */
+  justify-content: center; /* center secara horizontal */
+  height: 100%; /* biar flex container penuh */
+  width: 100%;
+}
+
+.login-form {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  width: 80%; /* lebih proporsional */
+  max-width: 320px; /* batasi ukuran di layar besar */
+}
+
+/* Wrapper screen buat center */
+.screen.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+/* Card Login */
+.login-form {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  width: 85%;
+  max-width: 350px;
+  text-align: center;
+}
+
+.login-form h2 {
+  font-family: "Inter Tight", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+/* Input style */
+.login-form .form-group {
+  margin-bottom: 1.2rem;
+  text-align: left;
+}
+
+.login-form label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #444;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.login-form input:focus {
+  border-color: #a53939;
+  box-shadow: 0 0 0 3px rgba(165, 57, 57, 0.2);
+}
+
+/* Tombol login */
+.login-form button {
+  width: 100%;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  background: #a53939;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.login-form button:hover {
+  background: #8b2e2e;
+  transform: translateY(-2px);
+}
+
+.login-form button:active {
+  transform: translateY(0);
+}
+
+/* Optional link register */
+.login-form .register-link {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.login-form .register-link a {
+  color: #f51414;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.login-form .register-link a:hover {
+  text-decoration: underline;
+}
+
+/* Animasi fade + slide */
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Terapkan ke login form */
+.login-form {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  width: 85%;
+  max-width: 350px;
+  text-align: center;
+  opacity: 0; /* start hidden */
+  animation: fadeSlideUp 0.6s ease-out forwards;
+  animation-delay: 0.2s; /* jeda sedikit biar smooth */
+}
